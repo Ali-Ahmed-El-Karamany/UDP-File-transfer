@@ -39,8 +39,8 @@ public class FileSender {
      */
     public void sendFile()
     {
+        System.out.println("Sending file contents to the receiver.");
         while(fileReader.hasLine()) {
-            System.out.println("Sending file contents to the receiver.");
             String line = fileReader.readLine();
             udpSender.sendLine(line);
             udpSender.sendNewLine();
@@ -59,6 +59,7 @@ public class FileSender {
     }
 
     public static void main(String[] args) {
+        // Validate that the required arguments are provided
         if (args.length < 3) {
             System.out.println("Usage: java FileSender <file-path> <host> <port>");
             System.exit(1);
