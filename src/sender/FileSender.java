@@ -43,7 +43,6 @@ public class FileSender {
         while(fileReader.hasLine()) {
             String line = fileReader.readLine();
             udpSender.sendLine(line);
-            udpSender.sendNewLine();
             try {
                 TimeUnit.MILLISECONDS.sleep(200);
             } catch (InterruptedException e) {
